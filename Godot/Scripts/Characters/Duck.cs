@@ -8,52 +8,50 @@ namespace DuckRace.Scripts.Characters;
 
 public partial class Duck : Node2D
 {
+    public DuckRaceInfo DuckInfo { get; set; }
+    public int? DuckIndex = null;
+    public int? TotalDuckCount = null;
+
     private AnimationPlayer _animPlayer;
     private Sprite2D _faceSprite;
     private Sprite2D _partyHatSprite;
     private CharacterBody2D _duckCharacter;
     private Label _nameLabel;
-    public DuckRaceInfo DuckInfo { get; set; }
     private bool _nameChanged;
     private bool _isMoving;
     private double _elapsedTimeSinceSpeedChange;
     private double _totalElapsedRaceTime;
     private int _speed;
 
-    public int? DuckIndex = null;
-    public int? TotalDuckCount = null;
     public override void _Ready()
     {
+        // Hide the Scene so contents don't visually move during allignment.
         Visible = false;
+
+        // Get all Nodes
         _animPlayer = GetNode<AnimationPlayer>("./AnimationPlayer");
         _faceSprite = GetNode<Sprite2D>("./Duck/Face");
         _partyHatSprite = GetNode<Sprite2D>("./Duck/Face/PartyHat");
         _duckCharacter = GetNode<CharacterBody2D>("./Duck");
         _nameLabel = GetNode<Label>("./Duck/NameLabel");
+
+        // Set Label Text for name
         _nameLabel.Text = DuckInfo.Name;
         _nameChanged = true;
         ApplyColoring();
         PositionForRace();
 
+        // Toggle the Hat, mainly just to show that Hats are easy to add, i didn't put uch effort into it (The ahd needs to get a color shader too).
         if (DuckInfo.HasPartyHat)
         {
             _partyHatSprite.Visible = true;
         }
 
     }
-    public void PlayPulseAnimation()
-    {
-        _animPlayer.SetSpeedScale(0.5f);
-        _animPlayer.Play("pulse");
-    }
-
-    public void HideNameLabel()
-    {
-        _nameLabel.Visible = false;
-    }
 
     public override void _Process(double delta)
     {
+        // If the name label changed we realign it
         if (_nameChanged)
         {
             var width = _nameLabel.GetRect().Size.X;
@@ -79,7 +77,16 @@ public partial class Duck : Node2D
             _duckCharacter.MoveAndSlide();
         }
     }
+    public void PlayPulseAnimation()
+    {
+        _animPlayer.SetSpeedScale(0.5f);
+        _animPlayer.Play("pulse");
+    }
 
+    public void HideNameLabel()
+    {
+        _nameLabel.Visible = false;
+    }
     public void StartRacing()
     {
         _animPlayer.Play("walking");
@@ -90,8 +97,8 @@ public partial class Duck : Node2D
     private void SetMovementVelocity()
     {
         var stragglersBonus = 0;
-        // To artificially boost the chances of Ducks that have fallen behind i will add a bonus speed relative to the ducks progress
-        // This is kinda dumb, but it sometimes causes a duck to recover.
+        // To artificially boost the chances of Ducks that have fallen behind
+        // This is kinda dumb, but it sometimes causes a duck to recover, making the race look slightly more interesting.
         if (Random.Shared.Next(0,100) < 30)
         {
             var relativeProgress = GetViewport().GetVisibleRect().Size.X / _duckCharacter.GetGlobalPosition().X;
@@ -112,6 +119,7 @@ public partial class Duck : Node2D
 
     public void ApplyColoring()
     {
+        // We need to duplicate the shader material, because otherwhise every duck shares the same instance, causing everyone to look the same.
         _faceSprite.Material = (Material)_faceSprite.Material.Duplicate(true);
         var faceSpriteShaderMat = _faceSprite.Material as ShaderMaterial;
         var newColor = DuckInfo.Color;

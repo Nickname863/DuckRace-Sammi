@@ -18,13 +18,13 @@ public partial class Celebration : Node2D
         this.Visible = false;
         _animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         _duck = GetNode<Duck>("DuckNode");
-        _duck.HideNameLabel();
         _namePlate = GetNode<Label>("NamePlate");
         _headLine = GetNode<Label>("HeadLine");
         _wheel = GetNode<Node2D>("Wheel");
 
-        
+
         _namePlate.Text = _duck.DuckInfo.Name;
+        _duck.HideNameLabel();
         _duck.PlayPulseAnimation();
         _animPlayer.SetSpeedScale(0.4f);
         _animPlayer.Play("WinAnimation");
@@ -33,9 +33,9 @@ public partial class Celebration : Node2D
 
     public override void _Process(double delta)
     {
+        // Align everything and set it to visible
         if (_isLabelNameChanged)
         {
-            
             CenterNode(_duck);
             CenterNode(_wheel);
             CenterLabel(_namePlate);

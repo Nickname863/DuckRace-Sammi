@@ -9,19 +9,16 @@ public partial class GoalEntity : Area2D
     [Export()]
     private CollisionShape2D _collider;
     
+
     public override void _Ready()
     {
-        var viewPortSize = GetViewport().GetVisibleRect().Size;
-        float containerHeight = viewPortSize.Y;
-        float containerWidth = viewPortSize.X;
-        var y = GetPosition().Y;
-        SetPosition(new Vector2(0 - 200, y));
-
+        // Add Collision to the Goal Line
         BodyEntered += OnBodyEntered;
     }
 
     private void OnBodyEntered(Node2D body)
     {
+        // If The parent of the collision shape that hit the goal is a Duck it wins
         if (body.GetParent() is Duck duck)
         {
 
