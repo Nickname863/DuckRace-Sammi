@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="DuckRace"
+run/main_scene="uid://deeyo8i5d6llw"
+config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="uid://bglid6iis5ep2"
+
+[autoload]
+
+GlobalDataManager="*res://Scripts/Global/GlobalDataManager.cs"
+
+[display]
+
+window/size/mode=1
+window/size/no_focus=true
+window/vsync/vsync_mode=0
+
+[dotnet]
+
+project/assembly_name="DuckRace"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

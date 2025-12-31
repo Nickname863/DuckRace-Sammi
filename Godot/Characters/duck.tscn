@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://puyj76pshwh5"]
+
+[ext_resource type="Texture2D" uid="uid://bekocejkmskxe" path="res://Characters/Sprites/YukkuriReimu.png" id="1_3q41q"]
+[ext_resource type="Script" uid="uid://dxbm0rodglruh" path="res://Scripts/Characters/Duck.cs" id="1_ohton"]
+[ext_resource type="Material" uid="uid://c40i0aq0jrx27" path="res://Characters/Materials/duckMaterial.tres" id="1_vsrpg"]
+[ext_resource type="Texture2D" uid="uid://dks0jx0vktv77" path="res://Characters/Sprites/PartyHat.png" id="4_n5pqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsrpg"]
+size = Vector2(120, 108)
+
+[sub_resource type="Animation" id="Animation_ohton"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Duck/Face:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Duck/Face:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n5pqu"]
+resource_name = "pulse"
+loop_mode = 1
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Duck/Face:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.41434664, 0.49923974, 0.5008603, 0.926768, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.41, 1.41), Vector2(1.31, 1.31), Vector2(1.2955469, 1.2955469), Vector2(0.839, 0.839), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Duck/Face:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24362159, 0.47355834, 0.73289937, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.3141592653589793, 0.0, 0.3141592653589793, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vsrpg"]
+resource_name = "walking"
+length = 0.75000834
+loop_mode = 1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Duck/Face:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1875, 0.375, 0.5625, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.34557519189487745, 0.0, -0.34557519189487745, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5pqu"]
+_data = {
+&"RESET": SubResource("Animation_ohton"),
+&"pulse": SubResource("Animation_n5pqu"),
+&"walking": SubResource("Animation_vsrpg")
+}
+
+[node name="DuckNode" type="Node2D"]
+script = ExtResource("1_ohton")
+
+[node name="Duck" type="CharacterBody2D" parent="."]
+collision_mask = 0
+
+[node name="Face" type="Sprite2D" parent="Duck"]
+texture_filter = 1
+material = ExtResource("1_vsrpg")
+texture = ExtResource("1_3q41q")
+flip_h = true
+
+[node name="PartyHat" type="Sprite2D" parent="Duck/Face"]
+visible = false
+position = Vector2(-5, 12.999997)
+scale = Vector2(1.863354, 1.8273381)
+texture = ExtResource("4_n5pqu")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Duck"]
+visible = false
+shape = SubResource("RectangleShape2D_vsrpg")
+
+[node name="NameLabel" type="Label" parent="Duck"]
+offset_left = -20.0
+offset_top = 41.0
+offset_right = 20.0
+offset_bottom = 64.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Bark"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n5pqu")
+}

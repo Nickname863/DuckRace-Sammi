@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://deeyo8i5d6llw"]
+
+[ext_resource type="Script" uid="uid://dnholwdk7eqgn" path="res://Scripts/Scenes/MainWindow.cs" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://dxn85oy3oyjff" path="res://Characters/Sprites/01_final.png" id="4_21xkr"]
+[ext_resource type="Texture2D" uid="uid://c1p85x5a311ms" path="res://Characters/Sprites/03_final.png" id="4_kry3j"]
+[ext_resource type="Texture2D" uid="uid://cplyqx6v4duv" path="res://Characters/Sprites/02_final.png" id="5_6bp64"]
+
+[sub_resource type="Animation" id="Animation_ynf5e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/StartText:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_kry3j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/StartText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/StartText:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 193)]
+}
+
+[sub_resource type="Animation" id="Animation_344ge"]
+resource_name = "readySetGo"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/StartText:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_21xkr"), ExtResource("4_kry3j"), ExtResource("4_21xkr"), ExtResource("5_6bp64"), ExtResource("4_kry3j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/StartText:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.9666667, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewportContainer/SubViewport/StartText:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.2, 0.2364233, 0.26975664, 0.30308998, 0.33333334, 1, 1.0333334, 1.0666667, 1.1000001, 1.1333334, 1.1666667, 1.2, 1.2364234, 1.2697568, 1.3030901, 1.3333334, 2, 2.0333335, 2.0666668, 2.1000001, 2.1333334, 2.166667, 2.2000003, 2.2364235, 2.2697568, 2.30309),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(960, 193), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225), Vector2(960, 193), Vector2(960, 193), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225), Vector2(960, 193), Vector2(960, 193), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225), Vector2(962.195, 197.065), Vector2(951.615, 187.865), Vector2(948.215, 200.225)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hptm8"]
+_data = {
+&"RESET": SubResource("Animation_ynf5e"),
+&"readySetGo": SubResource("Animation_344ge")
+}
+
+[node name="MainWindow" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_bo1nx")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 1482.0
+offset_bottom = 800.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 360)
+render_target_update_mode = 4
+
+[node name="StartText" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+visible = false
+z_index = 30
+position = Vector2(960, 193)
+texture = ExtResource("4_kry3j")
+
+[node name="GoalLineCrossedTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="StartTextAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hptm8")
+}
+
+[node name="ErrorOutput" type="RichTextLabel" parent="."]
+offset_left = 5.0
+offset_top = 473.0
+offset_right = 635.0
+offset_bottom = 638.0
+text = "This Textfield displays any errors i was able to catch (it does not magically contain other errors):
+"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]

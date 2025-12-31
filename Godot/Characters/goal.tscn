@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://daxxro4v3fmqh"]
+
+[ext_resource type="Script" uid="uid://eo1s6xfhs1cg" path="res://Scripts/Characters/GoalEntity.cs" id="1_8e4r7"]
+[ext_resource type="Shader" uid="uid://bhdhsexr07a4p" path="res://Shaders/Characters/goal.gdshader" id="1_8v4dr"]
+[ext_resource type="Texture2D" uid="uid://c3k2fxu6s7j3o" path="res://Characters/Sprites/GoalTexture.png" id="1_pwwj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v4dr"]
+size = Vector2(118, 622)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8e4r7"]
+shader = ExtResource("1_8v4dr")
+shader_parameter/x_mult = 5.999999865888
+shader_parameter/y_mult = 1.999999955296
+
+[node name="Goal" type="Node2D"]
+
+[node name="GoalEntity" type="Area2D" parent="."]
+script = ExtResource("1_8e4r7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalEntity"]
+position = Vector2(5, -29)
+shape = SubResource("RectangleShape2D_8v4dr")
+
+[node name="Sprite2D" type="Sprite2D" parent="GoalEntity"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_8e4r7")
+position = Vector2(4.4999957, -28.999998)
+scale = Vector2(59.499996, 310)
+texture = ExtResource("1_pwwj0")
+region_enabled = true
+region_rect = Rect2(2, 3, 2, 2)

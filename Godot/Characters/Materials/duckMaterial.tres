@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c40i0aq0jrx27"]
+
+[ext_resource type="Shader" uid="uid://cemmkyngbj3st" path="res://Shaders/Characters/duck_colors.gdshader" id="1_qlodq"]
+[ext_resource type="Texture2D" uid="uid://03fatln6yoqf" path="res://Characters/Sprites/YukkuriReimu_mask.png" id="2_8nfnj"]
+
+[resource]
+shader = ExtResource("1_qlodq")
+shader_parameter/new_color = Color(0.0126450835, 0.9480516, 0.12957089, 1)
+shader_parameter/color_map = ExtResource("2_8nfnj")
+shader_parameter/is_grey = false

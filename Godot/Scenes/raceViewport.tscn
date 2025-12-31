@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://beafvcews54wx"]
+
+[ext_resource type="PackedScene" uid="uid://daxxro4v3fmqh" path="res://Characters/goal.tscn" id="3_fcalu"]
+
+[node name="RaceViewport" type="Node2D"]
+texture_filter = 1
+
+[node name="Goal" parent="." instance=ExtResource("3_fcalu")]
+position = Vector2(1018, 339)
