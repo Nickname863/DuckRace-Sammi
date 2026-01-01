@@ -3,7 +3,10 @@ Quick Programm Overview
 <img width="4807" height="1355" alt="grafik" src="https://github.com/user-attachments/assets/e9759d9e-e955-49e0-a721-e2f77d1293ba" />
 
 ### Intro
-This is a Program that utilises Spout2 to stream a viewport to OBS or any other reciver. It utilises this wrapper https://github.com/you-win/spout-gd and of course Spout 2 https://github.com/leadedge/Spout2. The C# Bindings were generated with "CSharp-Wrapper-Generator-for-GDExtension" at https://github.com/Delsin-Yu/CSharp-Wrapper-Generator-for-GDExtension.
+This is a Program that utilises Spout2 to stream a viewport to OBS or any other reciver. 
+
+#### Licenses
+It utilises this wrapper https://github.com/you-win/spout-gd and of course Spout 2 https://github.com/leadedge/Spout2. The C# Bindings were generated with "CSharp-Wrapper-Generator-for-GDExtension" at https://github.com/Delsin-Yu/CSharp-Wrapper-Generator-for-GDExtension.
 The Spout2 & Spout GD Binaries are checked into this project, their licenses apply to them as appropiate, copys of their code licenses are present in the license folder. Names and Images are for testing convenience and held by their respective license holder, only code written by me or by contributers is licensed under [WTFPL v2](https://github.com/Nickname863/DuckRace-Sammi/blob/master/Licenses/DuckRace/License.md).
 ### Setup
 
