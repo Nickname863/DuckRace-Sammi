@@ -6,7 +6,7 @@
 	"DebugWithVS": {
 	  "commandName": "Executable",
 	  "executablePath": "C:\\Installed\\Godot45\\Godot_v4.5-stable_mono_win64.exe",
-	  "commandLineArgs": "--path \"G:\\Gamedev\\Duckrace\" --verbose --data \"[ { 'Id': 'AAgs5H0txAV59us-H_xaysFw', 'ColorName': 'random', 'HasPartyHat': false, 'Name': 'Rudi' }, { 'Id': 'BBgs5H0txAV59us-H_xaysFw', 'ColorName': 'name', 'HasPartyHat': false, 'Name': 'Seki' }, { 'Id': 'DDgs5H0txAV59us-H_xaysFw', 'ColorName': 'REBECCAPURPLE', 'HasPartyHat': false, 'Name': 'Doggy' }, { 'Id': 'EEgs5H0txAV59us-H_xaysFw', 'ColorName': '#03f221', 'HasPartyHat': false, 'Name': 'Mira the Lobter' }, { 'Id': 'FFgs5H0txAV59us-H_xaysFw', 'ColorName': 'Red', 'HasPartyHat': true, 'Name': 'Piwo' }, { 'Id': 'CCgs5H0txAV59us-H_xaysFw', 'ColorName': 'id', 'HasPartyHat': false, 'Name': 'Edit' } ]\"",
+	  "commandLineArgs": "--path \"G:\\Gamedev\\DuckraceProject\\Godot\" --verbose --data \"[ { 'Id': 'AAgs5H0txAV59us-H_xaysFw', 'ColorName': 'random', 'HasPartyHat': false, 'Name': 'Rudi' }, { 'Id': 'BBgs5H0txAV59us-H_xaysFw', 'ColorName': 'name', 'HasPartyHat': false, 'Name': 'Seki' }, { 'Id': 'DDgs5H0txAV59us-H_xaysFw', 'ColorName': 'REBECCAPURPLE', 'HasPartyHat': false, 'Name': 'Doggy' }, { 'Id': 'EEgs5H0txAV59us-H_xaysFw', 'ColorName': '#03f221', 'HasPartyHat': false, 'Name': 'Mira the Lobter' }, { 'Id': 'FFgs5H0txAV59us-H_xaysFw', 'ColorName': 'Red', 'HasPartyHat': true, 'Name': 'Piwo' }, { 'Id': 'CCgs5H0txAV59us-H_xaysFw', 'ColorName': 'id', 'HasPartyHat': false, 'Name': 'Edit' } ]\"",
 	  "nativeDebugging": true
 	}
   }
