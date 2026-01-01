@@ -73,6 +73,12 @@ Important last optional step, Visual Studio will nag you with code suggestions, 
 
 <img width="923" height="726" alt="grafik" src="https://github.com/user-attachments/assets/90e46c84-3579-43a1-b642-1b64bd2be425" />
 
+#### Setting up external editor.
+
+To open C# Scripts in another editor, Change the Editor Setting For the External Editor. (For Example to Visual Studio)
+<img width="961" height="758" alt="grafik" src="https://github.com/user-attachments/assets/b48808a2-ab43-46cf-90bd-1eb1ccf9f9e7" />
+
+
 #### Setting Up C# Debugging
 
 To Set up the Debugging with Visual Studio, which can be extremely useful you will need to edit the launchprofile
