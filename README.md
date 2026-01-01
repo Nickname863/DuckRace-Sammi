@@ -4,7 +4,7 @@ Quick Programm Overview
 
 ### Intro
 This is a Program that utilises Spout2 to stream a viewport to OBS or any other reciver. It utilises this wrapper https://github.com/you-win/spout-gd and of course Spout 2 https://github.com/leadedge/Spout2. The C# Bindings were generated with "CSharp-Wrapper-Generator-for-GDExtension" at https://github.com/Delsin-Yu/CSharp-Wrapper-Generator-for-GDExtension.
-The Spout2 & Spout GD Binaries are checked into this project, their licenses apply to them as appropiate, copys of their code licenses are present in the license folder. Names and Images are for testing convenience and held by their respective license holder, only code written by me or by contributers is licensed under [WTFPL v2]([https://aka.ms/vs/17/release/vs_community.exe](https://github.com/Nickname863/DuckRace-Sammi/blob/master/Licenses/DuckRace/License.md)).
+The Spout2 & Spout GD Binaries are checked into this project, their licenses apply to them as appropiate, copys of their code licenses are present in the license folder. Names and Images are for testing convenience and held by their respective license holder, only code written by me or by contributers is licensed under [WTFPL v2](https://github.com/Nickname863/DuckRace-Sammi/blob/master/Licenses/DuckRace/License.md).
 ### Setup
 
 1. Install The Deck from the SAMMI Folder in SAMMI.
