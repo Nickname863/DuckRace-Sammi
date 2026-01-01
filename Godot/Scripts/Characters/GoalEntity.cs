@@ -12,6 +12,8 @@ public partial class GoalEntity : Area2D
 
     public override void _Ready()
     {
+        var y = GetPosition().Y;
+        SetPosition(new Vector2(0 - 200, y));
         // Add Collision to the Goal Line
         BodyEntered += OnBodyEntered;
     }
