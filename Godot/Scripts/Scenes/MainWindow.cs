@@ -185,6 +185,10 @@ public partial class MainWindow : Node2D
         _subViewport.CallDeferred(MethodName.RemoveChild, _celebrationNode);
         _celebrationNode = null;
         _raceInProgress = false;
+        if (GlobalDataManager.Instance.KillProgramAfterRace)
+        {
+            GetTree().Quit();
+        }
 
     }
 

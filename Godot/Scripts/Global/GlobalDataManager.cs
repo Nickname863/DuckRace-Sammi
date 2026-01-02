@@ -24,6 +24,7 @@ namespace DuckRace.Scripts.Global
         public static GlobalDataManager Instance;
         // The FPS that the app wants to run at when not in focus and no race is running, so it takes less resources
         public int DestinationFPS = 1;
+        public bool KillProgramAfterRace;
 
         private const string DuckPipeName = "Duck_Race_Pipe";
         private bool _isListening = false;
@@ -48,6 +49,7 @@ namespace DuckRace.Scripts.Global
             //In thios case we just use them as a flag
             var startMinimized = Array.FindIndex(arguments, line => line == "--startMinimized") > -1;
             var overrideExitButton = Array.FindIndex(arguments, line => line == "--overrideExitButton") > -1;
+            KillProgramAfterRace = Array.FindIndex(arguments, line => line == "--killProgramAfterRace") > -1;
             string duckData = string.Empty;
 
             SetupStatusIndicator(overrideExitButton);
