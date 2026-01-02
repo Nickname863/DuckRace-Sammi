@@ -38,8 +38,8 @@ public partial class Duck : Node2D
         // Set Label Text for name
         _nameLabel.Text = DuckInfo.Name;
         _nameChanged = true;
-        ApplyColoring();
         PositionForRace();
+        ApplyColoring();
 
         // Toggle the Hat, mainly just to show that Hats are easy to add, i didn't put uch effort into it (The ahd needs to get a color shader too).
         if (DuckInfo.HasPartyHat)
